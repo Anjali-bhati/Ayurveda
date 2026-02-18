@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Page</title>
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="items.css">
+<link rel="icon" type="image/png" href="image/favicon_io/favicon-16x16.png">
+</head>
+
+<body>
+
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
+<div class="container-fluid">
+  <a class="navbar-brand" href="#">
+    <img id="logo-nav" src="image/logo.png" class="img-fluid" alt="logo">
+  </a>
+  <button class="navbar-toggler" type="button"
+    data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ms-auto gap-1 me-3">
+      <li class="nav-item me-3">
+        <a class="nav-link text-black" href="index.html">Home</a>
+      </li>
+      <li class="nav-item me-3">
+        <a class="nav-link text-black" href="About-Us.html">About Us</a>
+      </li>
+      <li class="nav-item me-3">
+        <a class="nav-link text-black" href="product.html">Shop</a>
+      </li>
+      <li class="nav-item dropdown me-2">
+        <a class="nav-link text-black" href="Myaccount.html">
+          My Account
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="25"
+            fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67"/>
+          </svg>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="Myaccount.html">Orders</a></li>
+          <li><a href="Myaccount.html">Account details</a></li>
+        </ul>
+      </li>
+      <li class="nav-item me-3">
+        <a class="nav-link text-black" href="Contact-us.html">Contact Us</a>
+      </li>
+      <li class="nav-item nav-link-last me-3" style="padding-left:15px;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <a class="nav-link" style="color:#6AB04C;" href="#">
+          ₹<span id="nav-total">0.00</span>
+          <i class="bi bi-basket"></i>
+          <span class="badge rounded-pill bg-success cart-badge">0</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+</header>
+
+<aside>
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h6 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Shopping Cart</h6>
+    <button type="button" class="btn-close close1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <hr>
+  <div class="offcanvas-body">
+    <div class="cart-items"></div>
+      <div class="fw-bold fs-6 mt-3 border-top pt-2">
+    Subtotal: ₹<span id="sidebar-total">0.00</span>
+  </div>
+  </div>
+  <a href="product.html" class="button1 btn btn-primary mx-2 mb-3 p-2 rounded-pill">Continue Shopping</a>
+  <div class="d-flex flex-column">
+    <a href="viewcart.html" class="button2 btn btn-outline-secondary mx-2 mb-3 p-2 rounded-pill">View Cart</a>
+    <a href="checkout.html" class="button3 btn btn-success mx-2 mb-3 p-2 rounded-pill">Checkout</a>
+  </div>
+</div>
+</aside>
+
+<main>
+  <div class="toast-container position-fixed top-0 end-0">
+  <div id="cartToast" class="toast align-items-center text-dark border-0 pt-3 fs-6" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+      </div>
+      <button type="button" class="btn-close btn-close-dark me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true"></div>
+
+<section>
+  <div class="s1 container-fluid">
+    <div class="row justify-content-center">
+      <div class="s1box col-11 col-lg-10">
+        <div id="product-container"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="text-white">
+<div class="container d-flex flex-column text-center" style="min-height: 35vh;">
+  <div class="d-flex justify-content-center align-items-center flex-grow-1 gap-3">
+    <a href="#" class="bg-white p-2" style="color: #6AB04C;"><i class="bi bi-facebook"></i></a>
+    <a href="#" class="bg-white p-2" style="color: #6AB04C;"><i class="bi bi-twitter"></i></a>
+    <a href="#" class="bg-white p-2" style="color: #6AB04C;"><i class="bi bi-instagram"></i></a>
+    <a href="#" class="bg-white p-2" style="color: #6AB04C;"><i class="bi bi-youtube"></i></a>
+  </div>
+  <p class="pb-5 mb-0">Copyright © 2025 Ayurveda | Powered by Ayurveda</p>
+</div>
+</footer>
+
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+const productData = JSON.parse(localStorage.getItem("selectedProduct"));
+
+if(!productData){
+  document.getElementById("product-container").innerHTML =
+    "<p class='text-center'>No product selected</p>";
+} else {
+
+  const tabs = [
+     {
+      id: "Description1",
+      title: "Description",
+      content: productData["long-desc"] || "No detailed description." 
+    },
+  ];
+
+
+  document.getElementById("product-container").innerHTML = `
+  <div class="row align-items-start mb-5 pb-3">
+
+    <!-- IMAGE -->
+    <div class="col-12 col-md-12 col-lg-6">
+      <div class="img-box position-relative">
+        <img src="${productData.img}" class="img-fluid" alt="${productData.title}">
+        ${productData.discount ? `
+          <span class="badge position-absolute top-0 start-0 m-3 rounded-pill bg-white text-dark">
+            -${productData.discount}%
+          </span>` : ""}
+         <div class="position-absolute top-0 end-0 mt-3 me-2">
+        <button type="button" class="icon-circle">
+            <i class="bi bi-search" data-bs-toggle="modal" data-bs-target="#imageModal"></i>
+        </button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- DETAILS -->
+    <div class="col-12 col-md-12 col-lg-6 position-sticky top-0">
+      <small class="text-muted">${productData.category}</small>
+      <h4 class="product-title mt-2">${productData.title}</h4>
+
+      <div class="fw-semibold mb-3">
+        ${productData.oldPrice ? `
+          <span class="text-muted1 text-decoration-line-through fs-5">
+            ₹${productData.oldPrice}.00
+          </span>` : ""}
+        <span class="fs-4"> ₹${productData.price}.00</span>
+        <span class="text-muted1"> + Free Shipping</span>
+      </div>
+
+      <p class="product-desc">${productData.desc}</p>
+
+      <div class="d-flex align-items-center gap-3">
+        <div class="input-group" style="width:140px;min-width:110px">
+          <button class="btn btn-outline-secondary minus rounded-0">−</button>
+          <input type="number" class="form-control text-center qty" value="1" min="1">
+          <button class="btn btn-outline-secondary plus rounded-0">+</button>
+        </div>
+        <button class="cart1 btn btn-success add-to-cart px-lg-5 rounded-pill">Add to cart</button>
+      </div>
+      <hr>
+      <div class="category mt-2 d-flex flex-column flex-lg-row gap-lg-5">
+        <div class="product">Category: <a class="text-muted2 text-decoration-none" href="product.html?Categories=${productData.category}">${productData.category}</a></div>
+       <div class="d-flex flex-row gap-1">Tags: ${productData.tag?.map(tag =>`<a class="text-muted2 text-decoration-none" href="product.html?Tags=${tag}">${tag}</a>`).join(" ,  ") || "None"}
+</div>
+</div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <ul class="nav nav-tabs mb-4">
+    ${tabs.map((t,i)=>`
+      <li class="nav-item">
+        <button class="nav-link ${i===0?'active':''}" data-bs-toggle="tab" data-bs-target="#${t.id}">${t.title}</button>
+      </li>
+    `).join("")}
+  </ul>
+
+  <div class="tab-content">
+    ${tabs.map((t,i)=>`
+      <div class="tab-pane fade ${i===0?'show active':''}" id="${t.id}">
+        ${t.content}
+      </div>
+    `).join("")}
+  </div>
+  `;
+
+    document.getElementById("imageModal").innerHTML=`
+   <div class="modal-dialog modal-dialog-centered modal-lg" id="modalDialog">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body d-flex justify-content-center align-items-center position-relative">
+        <img id="modalImg" src="${productData.img}" class="img-fluid" style="width:607px; height:607px; object-fit:contain;">
+      </div>
+    </div>
+  </div>
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal"></button>
+`;    
+
+
+  const qty = document.querySelector(".qty");
+  document.querySelector(".plus").onclick = () => qty.value++;
+  document.querySelector(".minus").onclick = () => { if(qty.value>1) qty.value--; };
+
+  const sidebar = document.querySelector(".cart-items"); 
+
+  function updateSidebar() {
+    sidebar.innerHTML = ""; 
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.forEach((item,index)=>{
+      const div = document.createElement("div");
+      div.className = "d-flex align-items-center mb-3 cart-item";
+      div.innerHTML = `
+        <img src="${item.img}" alt="${item.title}" width="50" class="me-2">
+        <div class="flex-grow-1">
+          <h6 class="mb-0">${item.title}</h6>
+          <button class="btn btn-sm btn-outline-secondary minus-sidebar rounded-0">−</button>
+          <span class="pb-1 px-2 cart-qty">${item.qty}</span>
+          <button class="btn btn-sm btn-outline-secondary plus-sidebar rounded-0">+</button>
+        </div>
+        <div class="d-flex flex-column align-items-center ms-2">
+          <i class="bi bi-x-lg ms-2 remove-item" style="cursor:pointer;"></i>
+          <span class="cart-price">₹${item.price * item.qty}.00</span>
+        </div>
+      `;
+      sidebar.appendChild(div);
+
+      div.querySelector(".plus-sidebar").onclick = ()=>{ item.qty++; localStorage.setItem("cart",JSON.stringify(cart)); updateSidebar(); };
+      div.querySelector(".minus-sidebar").onclick = ()=>{ if(item.qty>1){ item.qty--; localStorage.setItem("cart",JSON.stringify(cart)); updateSidebar(); } };
+      div.querySelector(".remove-item").onclick = ()=>{ cart.splice(index,1); localStorage.setItem("cart",JSON.stringify(cart)); updateSidebar(); };
+    });
+
+    // const totalQty = cart.reduce((a,b)=>a+b.qty,0);
+    const totalPrice = cart.reduce((a,b)=>a+b.price*b.qty,0);
+    document.getElementById("sidebar-total").textContent =
+  totalPrice.toFixed(2);
+
+    // document.querySelector(".cart-badge").textContent = totalQty;
+    document.querySelector(".cart-badge").textContent = cart.length;
+
+    document.getElementById("nav-total").textContent = totalPrice.toFixed(2);
+
+    if(cart.length===0){
+      document.querySelector(".button1").style.display="inline-block";
+      document.querySelector(".button2").style.display="none";
+      document.querySelector(".button3").style.display="none";
+    } else {
+      document.querySelector(".button1").style.display="none";
+      document.querySelector(".button2").style.display="inline-block";
+      document.querySelector(".button3").style.display="inline-block";
+    }
+  }
+
+  document.querySelector(".add-to-cart").onclick = ()=>{
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const item = {
+    id:productData.id,  
+    title: productData.title,
+    price: productData.price,
+    img: productData.img,
+    qty: parseInt(qty.value)
+  };
+
+  const existing = cart.find(p => p.title === item.title);
+  if (existing) {
+    existing.qty += item.qty;
+  } else {
+    cart.push(item);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateSidebar();
+  };
+
+  updateSidebar();
+
+  const imgBox = document.querySelector(".img-box");
+  const img = imgBox.querySelector("img");
+
+  if(imgBox && img){
+    imgBox.addEventListener("mousemove",(e)=>{
+      const rect = imgBox.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const zoom = 1.4;
+      const moveX = (x/rect.width)*rect.width*(zoom-1);
+      const moveY = (y/rect.height)*rect.height*(zoom-1);
+      img.style.transform = `translate(-${moveX}px, -${moveY}px) scale(${zoom})`;
+    });
+    imgBox.addEventListener("mouseleave",()=>{ img.style.transform="translate(0,0) scale(1)"; });
+  }
+
+}
+
+
+// notification 
+const toastTrigger = document.querySelector(".add-to-cart");
+const toastLiveExample = document.getElementById("cartToast");
+
+if (toastTrigger && toastLiveExample) {
+  const toastBootstrap =
+    bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+
+  toastTrigger.addEventListener("click", () => {
+  toastLiveExample.querySelector(".toast-body").innerHTML =
+  `${productData.title} added to cart <i class="bi bi-cart4"></i>`;
+
+    toastBootstrap.show();
+  });
+}
+
+
+</script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

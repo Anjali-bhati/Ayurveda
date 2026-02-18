@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="Stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="Home.css">
+    <link rel="icon" type="image/png" href="image/favicon_io/favicon-16x16.png">
+</head>
+<body>
+  <!-- navbar -->
+<header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img id="logo-nav" src="image/logo.png" class="img-fluid" alt="logo">
+    </a>
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto gap-1 me-3">
+        <li class="nav-item me-3">
+          <a class="nav-link text-black active" style="color: black;" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link text-black" aria-current="page" href="About-Us.html">About Us</a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link text-black" aria-current="page" href="product.html">Shop</a>
+        </li>
+        <li class="nav-item dropdown me-2">
+  <a class="nav-link text-black" href="Myaccount.html">
+    My Account
+    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="25"
+      fill="currentColor" viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67"/>
+    </svg>
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><a href="Myaccount.html">Orders</a></li>
+    <li><a href="Myaccount.html">Account details</a></li>
+  </ul>
+</li>
+        <li class="nav-item me-3">
+          <a class="nav-link text-black" aria-current="page" href="Contact-us.html">Contact Us</a>
+        </li>
+         <li style="padding-left: 15px;" class="nav-item nav-link-last me-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          
+         <a class="nav-link" style="color:#6AB04C;" href="#">₹<span id="nav-total">0.00</span>
+          <i class="bi bi-basket"></i>
+          <span class="badge rounded-pill bg-success cart-badge">0</span>
+         </a>
+
+        </li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+<aside>
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h6 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Shopping Cart</h6>
+    <button type="button" class="btn-close close1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <hr>
+  <div class="offcanvas-body">
+    <div class="cart-items"></div>
+   <div class="fw-bold fs-6 mt-3 border-top pt-2">
+    Subtotal: ₹<span id="sidebar-total">0.00</span>
+  </div>
+  </div>
+ <a href="product.html" class="button1 btn btn-primary mx-2 mb-3 p-2 rounded-pill">Continue Shopping</a>
+ <div class="d-flex flex-column">
+ <a href="viewcart.html" class="button2 btn btn-outline-secondary mx-2 mb-3 p-2 rounded-pill">View Cart</a>
+ <a href="checkout.html" class="button3 btn btn-success mx-2 mb-3 p-2 rounded-pill">Checkout</a>
+ </div>
+</div>
+</div>
+
+</aside>
+<!-- content -->
+<main>
+   <!-- section 1 -->
+<section>
+  <div class="position-relative w-100 z-10" style="height: 115vh;">
+    <img src="image/pic3.png" class="w-100" style="object-fit: cover; height: 115vh;" alt="image">
+
+    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+      <div class="container">
+        <div class="row ps-lg-5 ps-2">
+          <div class="col-12 col-lg-6 text-white pb-5 mb-5">
+            <h6 class="pb-3" id="imgh6">Featured Product</h6>
+            <h1 id="imgh1" class="pe-lg-5 me-lg-5">
+              <b>Rejuvenate Yourself With Green Tea</b>
+            </h1>
+            <p id="imgp" class="pt-3 pb-2 pe-lg-5 me-lg-5 ">Ornare dictum suspendisse corrupti class. Ipsum sit malesuada velit rutrum aenean laboriosam, magni facilisis optio. Perferendis morb.</p>
+            <button id="b1" type="button" class="btn btn-outline-light ps-5 pe-5 pt-2 pb-2 mt-4"> Buy For ₹150 Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- section 2 -->
+<section class="ayurveda-section">
+  <div class="container-fluid">
+    <div class="row s2 align-items-center">
+
+      <!-- LEFT -->
+      <div class="col-sm-12 col-lg-9 col-md-12 left-box">
+        <h6>Auctor Laboriosam Ipsum</h6>
+
+        <h2>
+          <b>Do You Know Your Ayurveda Body Type?</b>
+        </h2>
+
+        <div class="info">
+          <div class="half-circle-icon"></div>
+          <div class="text">
+          <h4><b>Summer (Fire & Water)</b></h4>
+          <p>Anim ducimus dictum proin sit viverra cursus ante temporibus officia, augue pretium, consequatur. Hic porttitor tristique dolor curabitur, officia architecto, morbi dictum convallis. Nibh saepe erat numquam luctus cupidatat nostra eos exercitationem sint morbi accusantium.</p>
+        </div>
+        </div>  
+
+        <div class="info">
+          <div class="half-circle-icon"></div>
+          <div class="text">
+          <h4><b>Winter (Air & Ether)</b></h4>
+          <p>Anim ducimus dictum proin sit viverra cursus ante temporibus officia, augue pretium, consequatur. Hic porttitor tristique dolor curabitur, officia architecto, morbi dictum convallis. Nibh saepe erat numquam luctus cupidatat nostra eos exercitationem sint morbi accusantium.</p>
+        </div>
+        </div>
+
+        <div class="info"> 
+          <div class="half-circle-icon"></div>
+          <div class="text">
+          <h4><b>Spring (Earth & Water)</b></h4>
+          <p>Anim ducimus dictum proin sit viverra cursus ante temporibus officia, augue pretium, consequatur. Hic porttitor tristique dolor curabitur, officia architecto, morbi dictum convallis. Nibh saepe erat numquam luctus cupidatat nostra eos exercitationem sint morbi accusantium.</p>
+        </div>
+      </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-12 col-lg-5 right-box">
+        <div class="img-box"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- section3 -->
+<section class="position-relative">
+  <div class="img-wrap1"></div>
+
+  <div class="position-absolute top-0 w-100 h-100 d-flex align-items-center justify-content-center" style="z-index: 1;">
+      <div class="container text-center text-lg-start">
+        <div class="row" style="height: 35vh;">
+          <div class="col-12 text-white text-center">
+             <h6 id="s3h6" class="pb-lg-2">Auctor Laboriosam Ipsum</h6>
+             <span id="line"></span>
+             <h2 id="s3h2" class="pt-lg-3">Get Authentic Ayurvedic Treatment Today!</h2>
+             <div id="but" class="d-flex flex-column flex-md-row gap-4 mt-lg-4 justify-content-center">
+              <button id="b2" type="button" class="btn btn-outline-success px-4 py-2 mt-lg-4 mt-3"><b>Consultaion On Call</b></button>
+              <button id="b3" type="button" class="btn btn-outline-light px-4 py-2 mt-lg-4 mt-md-3"><b>Book Free Appointment</b></button>
+             </div>
+          </div>
+        </div>
+      </div> 
+  </div>
+</section>
+
+
+
+<!-- section 4 -->
+<section>
+  <div class="img-wrap2 position-relative">
+
+    <img id="img2" src="image/pic1.png" class="img-fluid" alt="">
+
+    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+      <div class="container py-5">
+        <div class="row justify-content-center mx-lg-5">
+
+          <!-- Card 1 -->
+          <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+            <div class="card cards4 text-center">
+              <div class="card-body">
+                <img src="image/Logo1.png" class="img-fluid imglogo mt-3 mb-4" alt="">
+                <h4 id="card-title">Look For Problem</h4>
+                <p id="card-text px-1">
+Nesciunt at doloremque elementum cum, odio. Voluptatem ullamcorper, distinctio magna corpor.                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+            <div class="card cards4 text-center">
+              <div class="card-body">
+                <img src="image/icon-2.png" class="img-fluid imglogo mt-3 mb-4" alt="">
+                <h4 id="card-title">Omnis Repreh</h4>
+                <p id="card-text px-1">
+Nesciunt at doloremque elementum cum, odio. Voluptatem ullamcorper, distinctio magna corpor.                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+            <div class="card cards4 text-center">
+              <div class="card-body">
+                <img src="image/icon-3.png" class="img-fluid imglogo mt-3 mb-4" alt="">
+                <h4 id="card-title">Facilisis Cillum</h4>
+                <p id="card-text px-1">
+Nesciunt at doloremque elementum cum, odio. Voluptatem ullamcorper, distinctio magna corpor.                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+            <div class="card cards4 text-center">
+              <div class="card-body">
+                <img src="image/icon-4.png" class="img-fluid imglogo mt-3 mb-4" alt="">
+                <h4 id="card-title">Omanis Reprehend</h4>
+                <p id="card-text px-1">
+Nesciunt at doloremque elementum cum, odio. Voluptatem ullamcorper, distinctio magna corpor.                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- section 5 -->
+ <section>
+  <div id="container">
+    <div id="s5col1" class="col-12 col-md-5 col-lg-4">
+      <div class="card cards5 ms-0 text-white">
+        <div class="card-body">
+          <h4 id="s5title">Metus, Dictum Facilisi Ipsam Quisqu!</h4>
+          <p id="s5text">Quam nunc deleniti curabitur nostrum ratione pellentesque integer. Nulla, officiis. Illum animi. Dis malesuada mollitia, exercitationem exercitationem. Iste euismod egestas mollit suspendisse quibusdam architecto habitant mi adipisicing exercitationem quam cumque illum id facilisis morbi.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="s5col2" class="col-12 col-md-5 col-lg-4">
+      <div class="card cards5 ms-0 text-bg-dark">
+        <div id="img-card"></div>
+        <div class="card-img-overlay">
+          <img id="s5logo" src="image/testimonial-1.png" alt="">
+          <h3 id="s5h3">"Erat Pellente Que Adipiscing Tempora Et Natus Maiores Suspendisse Eius, Et Expedita, Pariatur"</h3>
+          <p id="s5text1">-Anna Salazar</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- section 6 -->
+<section class="py-5 pb-0">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-start">
+      
+     <div class="ms-lg-3 flex-shrink-0 text-center" style="min-width: 180px;">
+     <h4 >Associated With:</h4>
+    </div>
+
+    <div class="d-flex flex-wrap flex-grow-1 gap-3 justify-content-start">
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+          <img src="image/logo-1.svg" class="img-fluid logo-img" alt="">
+        </div>
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+          <img src="image/logo-2.svg" class="img-fluid logo-img" alt="">
+        </div>
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+          <img src="image/logo-3.svg" class="img-fluid logo-img" alt="">
+        </div>
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+          <img src="image/logo-4.svg" class="img-fluid logo-img" alt="">
+        </div>
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+          <img src="image/logo-5.svg" class="img-fluid logo-img" alt="">
+        </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- section 7 -->
+<section class="py-5">
+  <div class="d-flex text-center align-items-start">
+    <div class="container product-item mt-lg-5 ">
+
+       <h1 id="s6h1" class="mt-5 mb-3 pb-5 pt-lg-5">Our Recent Products!</h1>
+
+       <ul id="productList" class="row list-unstyled justify-content-center mx-lg-5 mx-0 pb-5 mb-4"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- section 8 -->
+<section class="bg-s8">
+  <div class="d-flex text-center align-items-start s8-wrap">
+    <div class="container s8-container">
+
+      <div class="row justify-content-center">
+
+        <!-- LEFT -->
+        <div class="col-12 col-lg-4 d-flex flex-column align-items-center s8-side">
+          <img src="image/icon-5.png" class="s8-icon mb-2" alt="">
+          <span id="no1" class="s8-count">12</span>
+          <div class="s8-text">Ornare Dictum</div>
+
+          <img src="image/icon-6.png" class="s8-icon mt-5 mb-2" alt="">
+          <span id="no2" class="s8-count">220</span>
+          <div class="s8-text">Ornare Dictum</div>
+        </div>
+
+        <!-- CENTER -->
+        <div class="col-12 col-lg-4 d-flex flex-column align-items-center gap-3">
+          <h6 class="s8-small mt-3">Rhoncus At Quis</h6>
+          <h2 class="s8-title mt-3">Bringing Ayurveda to Every Home!</h2>
+          <img src="image/pic15-free-img.png" class="img-fluid s8-img mt-lg-5" alt="">
+        </div>
+
+        <!-- RIGHT -->
+        <div class="col-12 col-lg-4 d-flex flex-column align-items-center s8-side">
+          <img src="image/Logo1.png" class="s8-icon mb-2" alt="">
+          <span id="no3" class="s8-count">825</span>
+          <div class="s8-text">Ornare Dictum</div>
+
+          <img src="image/icon-7.png" class="s8-icon mt-5 mb-2" alt="">
+          <span id="no4" class="s8-count">220</span>
+          <div class="s8-text">Ornare Dictum</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- section 9 -->
+<section class="s9-bg">
+  <div class="d-flex text-center align-items-start s9-wrap">
+    <div class="container s9-container">
+
+      <div class="row justify-content-center mt-1">
+
+        <!-- CARD 1 -->
+        <div class="col-12 col-lg-4 d-flex flex-column align-items-center s9-col">
+          <img src="image/icon-5.png" class="s9-icon mb-3" alt="">
+          <h3 class="s9-title my-2">Primary Consultation</h3>
+          <p class="s9-text">
+            Asperiores tempus, faucibus occaecati, viverra at fuga, eros.
+            Aliquet bibendum platea, ducimus natus blanditiis.
+            Felis nec numquam.
+          </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="col-12 col-lg-4 d-flex flex-column align-items-center s9-col">
+          <img src="image/Logo1.png" class="s9-icon mb-3" alt="">
+          <h3 class="s9-title my-2">Diagnose</h3>
+          <p class="s9-text">
+            Asperiores tempus, faucibus occaecati, viverra at fuga, eros.
+            Aliquet bibendum platea, ducimus natus blanditiis.
+            Felis nec numquam.
+          </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-12 col-lg-4 d-flex flex-column align-items-center s9-col">
+          <img src="image/icon-4.png" class="s89-icon mb-3" alt="">
+          <h3 class="s9-title">Deliver</h3>
+          <p class="s9-text">
+            Asperiores tempus, faucibus occaecati, viverra at fuga, eros.
+            Aliquet bibendum platea, ducimus natus blanditiis.
+            Felis nec numquam.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- section 10 -->
+<section class="position-relative s10-section">
+
+  <div id="s10img" class="w-100"></div>
+
+  <div class="position-absolute top-0 start-0 w-100 h-100
+              d-flex align-items-center justify-content-center px-3">
+    <div class="text-white text-center s10-content">
+
+      <p class="s10-text mb-4">
+        "Aliquet cumque egestas necessitatibus similique auctor hendrerit in
+        numquam, eos magna minim! Per elementum condimentum nobis, lobortis.
+        Fames, hic cillum! Suscipit excepturi tor."
+      </p>
+
+      <img id="s10img2" src="image/testimonial-2.png"
+           class="rounded-circle mb-3"
+           width="105" height="105" alt="">
+
+      <div class="s10-name">Sara Bailey</div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- section 11 -->
+<section>
+  <div id="s11img" class="img-wrap">
+    <!-- Background Image -->
+    <img id="s11img2" src="image/pic25-free-img.jpg" class="img-fluid w-100" alt="Contact Background">
+
+    <!-- Overlay + Content -->
+    <div class="position-absolute top-0 w-100 h-100 d-flex align-items-center justify-content-center" style="z-index: 1;">
+      <div class="container text-md-start text-lg-start text-sm-center">
+        <div class="row ms-lg-5" style="max-width: 72rem; margin: auto;">
+
+          <!-- Left Column -->
+          <div class="col-12 col-md-6 col-lg-6 text-left d-flex flex-column gap-3 cols11">
+            <h6 id="s11h6" class="section-subtitle">Auctor Laboriosam lpsum</h6>
+            <span class="text-center ms-md-2" id="line2"></span>
+            <h2 id="s11h2" class="section-title">Contact Us For All Your Health Related Queries!</h2>
+            <p id="s11p" class="section-desc mb-5 mb-md-3">
+              Sunt hic! Libero malesuada! Id praesent libero do, conubia cras distinctio corrupti asperiores feugiat aptent dictumst molestie mus elit quaerat. Habitant bitasse turpis congue nostrum.
+            </p>
+
+            <!-- Phone -->
+            <div class="d-flex flex-column gap-1">
+              <div class="d-flex flex-column flex-md-row align-items-center gap-3">
+                <i id="logoss11" class="bi bi-telephone-fill fs-5"></i>
+                <span id="s11text" class="contact-label ps-1 text-center">Phone</span>
+              </div>
+              <p id="s11p" class="contact-info ps-lg-4 ps-sm-1 ps-md-4">+00 11 222 333444, +00 11 222 333422</p>
+            </div>
+
+            <!-- Email -->
+            <div class="d-flex flex-column gap-1">
+              <div class="d-flex flex-column flex-md-row align-items-center gap-2">
+                <i id="logoss11" class="bi bi-envelope-fill fs-5"></i>
+                <span id="s11text" class="contact-label ps-1 text-center">Email</span>
+              </div>
+              <p id="s11p" class="contact-info ps-lg-4 ps-md-4">ayurveda@example.com | ayurved@example.com</p>
+            </div>
+
+            <!-- Address -->
+            <div class="d-flex flex-column gap-1">
+              <div class="d-flex flex-column flex-md-row align-items-center text-center gap-2">
+                <i id="logoss11" class="bi bi-geo-alt-fill fs-5"></i>
+                <span id="s11text" class="contact-label ps-1 text-center">Address</span>
+              </div>
+              <p id="s11p" class="contact-info ps-4">123 Fifth Avenue, New York, NY 10160, USA</p>
+            </div>
+          </div>
+
+          <!-- Right Column: Form -->
+         <div class="col-12 col-md-6 col-lg-6">
+          <form>
+         <div class="form-box border ms-lg-3">
+          <div class="form-inner d-flex flex-column gap-4 p-4 p-md-5">
+          
+          <input type="text" class="form-control py-3" placeholder="Your Name" required>
+          <input type="text" class="form-control py-3" placeholder="Your Subject" required>
+          <textarea class="form-control py-3" rows="5" placeholder="Your Message" required></textarea>
+      
+          <button id="s11button" type="submit" class="btn btn-success rounded-pill py-2 px-4 align-self-start">Book an Appointment</button>
+          </form>
+    </div>
+  </div>
+</div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- footer -->
+<footer class="text-white">
+  <div class="container d-flex flex-column text-center"
+       style="min-height: 35vh;">
+    <div class="d-flex justify-content-center align-items-center flex-grow-1 gap-3">
+      <a href="#" class="bg-white p-2" style="color: #8CBB00;">
+        <i class="bi bi-facebook"></i>
+      </a>
+      <a href="#" class="bg-white p-2" style="color: #8CBB00;">
+        <i class="bi bi-twitter"></i>
+      </a>
+      <a href="#" class="bg-white p-2"  style="color: #8CBB00;">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="#" class="bg-white p-2" style="color: #8CBB00;">
+        <i class="bi bi-youtube"></i>
+      </a>
+    </div>
+    <p class="pb-5 mb-0">
+      Copyright © 2025 Ayurveda | Powered by Ayurveda
+    </p>
+  </div>
+</footer>
+<script>
+  
+document.addEventListener("DOMContentLoaded", () => {
+  const productList = document.getElementById("productList");
+
+  // Fetch products JSON
+  fetch("product.json")
+    .then(res => res.json())
+    .then(products => {
+      const firstFour = products.slice(0, 4); 
+
+      firstFour.forEach(p => {
+        const li = document.createElement('li');
+        li.className = "col-12 col-sm-6 col-lg-3 mb-4";
+        li.innerHTML = `
+          <div class="card product-card border-0 text-center">
+             <img src="${p.img}" alt="${p.title}" class="product-click">
+            ${p.discount ? `<span class="badge position-absolute top-0 start-0 m-3 rounded-pill bg-white text-dark">-${p.discount}%</span>` : ''}
+          </div>
+          <div class="card-body text-start">
+            <small class="text-muted">${p.category}</small>
+            <a href="#" class="product-title d-block mt-2">${p.title}</a>
+            <div class="fw-semibold">
+              ${p.oldPrice ? `<span class="text-muted text-decoration-line-through">&#x20B9;${p.oldPrice}.00</span>` : ''}
+              <span>&#x20B9;${p.price}.00</span>
+            </div>
+          </div>
+        `;
+        productList.appendChild(li);
+
+        li.querySelector('.product-click').addEventListener('click', () => {
+        localStorage.setItem('selectedProduct', JSON.stringify(p));
+        window.location.href = 'h1.html';
+    });
+    li.querySelector('.product-title').addEventListener('click', (e) => {
+        e.preventDefault(); 
+        localStorage.setItem('selectedProduct', JSON.stringify(p));
+        window.location.href = 'h1.html';
+    });
+    
+      });
+    })
+    .catch(err => console.error("Products not loaded", err));
+
+
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const sidebar = document.querySelector(".cart-items");
+
+function updateSidebar() {
+  sidebar.innerHTML = "";
+
+  let totalQty = 0;
+  let totalPrice = 0;
+
+  cart.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.className = "d-flex align-items-center mb-3 cart-item";
+    div.innerHTML = `
+      <img src="${item.img}" alt="${item.title}" width="50" class="me-2">
+      <div class="flex-grow-1">
+        <h6 class="mb-0">${item.title}</h6>
+        <button class="btn btn-sm btn-outline-secondary minus-sidebar rounded-0">−</button>
+        <span class="pb-1 px-2 cart-qty">${item.qty}</span>
+        <button class="btn btn-sm btn-outline-secondary plus-sidebar rounded-0">+</button>
+      </div>
+      <div class="d-flex flex-column align-items-center ms-2">
+        <i class="bi bi-x-lg ms-2 remove-item" style="cursor:pointer;"></i>
+        <span class="cart-price">₹${item.price * item.qty}.00</span>
+      </div>
+    `;
+    div.querySelector(".plus-sidebar").onclick = () => {
+      item.qty++;
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateSidebar();
+    };
+    div.querySelector(".minus-sidebar").onclick = () => {
+      if(item.qty > 1) {
+        item.qty--;
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateSidebar();
+      }
+div.querySelector(".sidebar-total").textContent =
+  (item.price * item.qty).toFixed(2);
+    };
+
+    div.querySelector(".remove-item").onclick = () => {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateSidebar();
+    };
+
+    sidebar.appendChild(div);
+
+    // totalQty += item.qty;
+    totalPrice += item.price * item.qty;
+  });
+document.getElementById("sidebar-total").textContent =
+  totalPrice.toFixed(2);
+
+  // document.querySelector(".cart-badge").textContent = totalQty;
+    document.querySelector(".cart-badge").textContent = cart.length;
+  document.getElementById("nav-total").textContent = totalPrice.toFixed(2);
+
+  if(cart.length === 0){
+    document.querySelector(".button1").style.display = "inline-block";
+    document.querySelector(".button2").style.display = "none";
+    document.querySelector(".button3").style.display = "none";
+  } else {
+    document.querySelector(".button1").style.display = "none";
+    document.querySelector(".button2").style.display = "inline-block";
+    document.querySelector(".button3").style.display = "inline-block";
+  }
+}
+updateSidebar();
+let done=false;
+
+function startCount(el, max,speed){
+  let i=1;
+  function run(){
+    if(i<=max){
+      el.textContent=i;
+      i++;
+      setTimeout(run,speed);
+    }
+  }
+  run();
+}
+
+window.addEventListener('scroll',()=>{
+  if(!done && document.getElementById('no1').getBoundingClientRect().top < window.innerHeight){
+    done=true;
+    startCount(no1,12,200);
+    startCount(no2,220,20);
+    startCount(no3,825,10);
+    startCount(no4,220,20);
+  }
+});
+});
+</script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="shop.css">
+<link rel="icon" type="image/png" href="image/favicon_io/favicon-16x16.png">
+</head>
+<body>
+
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img id="logo-nav" src="image/logo.png" class="img-fluid" alt="logo">
+    </a>
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto gap-1 me-3">
+        <li class="nav-item me-3"><a class="nav-link text-black" href="index.html">Home</a></li>
+        <li class="nav-item me-3"><a class="nav-link text-black" href="About-Us.html">About Us</a></li>
+        <li class="nav-item me-3"><a class="nav-link text-black active" href="product.html">Shop</a></li>
+        <li class="nav-item dropdown me-2">
+          <a class="nav-link text-black" href="Myaccount.html">My Account
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="25" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67"/>
+            </svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="Myaccount.html">Orders</a></li>
+            <li><a href="Myaccount.html">Account details</a></li>
+          </ul>
+        </li>
+        <li class="nav-item me-3"><a class="nav-link text-black" href="Contact-us.html">Contact Us</a></li>
+       <li class="nav-item nav-link-last me-3" style="padding-left:15px;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <a class="nav-link" style="color:#6AB04C;" href="#">
+          ₹<span id="nav-total">0.00</span>
+          <i class="bi bi-basket"></i>
+          <span class="badge rounded-pill bg-success cart-badge">0</span>
+        </a>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+<aside>
+  <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h6 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Shopping Cart</h6>
+    <button type="button" class="btn-close close1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <hr>
+  <div class="offcanvas-body">
+    <div class="cart-items"></div>
+      <div class="fw-bold fs-6 mt-3 border-top pt-2">
+    Subtotal: ₹<span id="sidebar-total">0.00</span>
+  </div>
+  </div>
+  <a href="product.html" class="button1 btn btn-primary mx-2 mb-3 p-2 rounded-pill">Continue Shopping</a>
+ <div class="d-flex flex-column">
+ <a href="viewcart.html" class="button2 btn btn-outline-secondary mx-2 mb-3 p-2 rounded-pill">View Cart</a>
+ <a href="checkout.html" class="button3 btn btn-success mx-2 mb-3 p-2 rounded-pill">Checkout</a>
+</div>
+</aside>
+
+<aside>
+  <div class="offcanvas offcanvas-start" id="offcanvasExample">
+    <div class="offcanvas-header d-flex align-items-center position-relative">
+      <div class="d-flex align-items-center w-100 me-4">
+        <input class="form-control me-2 rounded-0" type="search" placeholder="Search Product"/>
+        <button type="button" class="btn button1">></button>
+      </div>
+      <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="product-categories ms-3 mt-1">
+        <h3>Product Categories</h3>
+        <a class="Categories" href="#" data-category="Oil">Essential Oil</a>(4)<br>
+        <a class="Categories" href="#" data-category="Soap">Soap</a>(4)<br>
+        <a class="Categories" href="#" data-category="Tea">Tea</a>(4)<br>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<main>
+
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true"></div>
+
+
+<section>
+  <div class="s1 container-fluid">
+    <div class="row justify-content-center">
+      <div class="s1box col-12 col-md-11 col-lg-10">
+        <div class="s2 container mb-lg-5 md-down sm-down">
+          <div class="row">
+            <div class="col d-flex align-items-center">
+              <button class="btn btn-primary rounded-pill py-lg-2 px-lg-3" id="s1button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
+                <i class="bi bi-sort-down pe-lg-2"></i> Filter
+              </button>
+              <div class="dropdown ms-auto me-2">
+                <a class="btn btn-outline-light text-black fs-6" href="#" role="button" data-bs-toggle="dropdown">Default Sorting
+                  <svg class="ms-lg-4" xmlns="http://www.w3.org/2000/svg" width="16" height="25"
+                  fill="currentColor" viewBox="0 0 16 18">
+                  <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67"/></svg>
+                </a>
+                <ul class="dropdown-menu px-4 rounded-0">
+                  <li><a class="dropdown-item" href="#">Default Sorting</a></li>
+                  <li><a class="dropdown-item" href="#">Sort by popularity</a></li>
+                  <li><a class="dropdown-item" href="#">Sort by rating</a></li>
+                  <li><a class="dropdown-item" href="#">Sort by latest</a></li>
+                  <li><a class="dropdown-item" href="#">Price: low to high</a></li>
+                  <li><a class="dropdown-item" href="#">Price: high to low</a></li>
+                </ul>
+              </div>
+              <div class="d-flex align-items-center gap-3 view-toggle">
+                <i id="gridView" class="bi bi-microsoft fs-6 view active" style="cursor:pointer;"></i>
+                <i id="listView" class="bi bi-list-task fs-4 view" style="cursor:pointer;"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h1 id="page-title" class="mb-4 text-center"></h1>
+        <!-- Product list generated from JSON -->
+        <ul class="product-list grid-view" id="productList"></ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="text-white">
+  <div class="container d-flex flex-column text-center" style="min-height: 35vh;">
+    <div class="d-flex justify-content-center align-items-center flex-grow-1 gap-3">
+      <a href="#" class="bg-white p-2" style="color: #6AB04C;"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="bg-white p-2" style="color: #6AB04C;"><i class="bi bi-twitter"></i></a>
+      <a href="#" class="bg-white p-2" style="color: #6AB04C;"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="bg-white p-2" style="color: #6AB04C;"><i class="bi bi-youtube"></i></a>
+    </div>
+    <p class="pb-5 mb-0">Copyright © 2025 Ayurveda | Powered by Ayurveda</p>
+  </div>
+</footer>
+
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const selectedCategory = params.get("Categories");
+const selectedTag = params.get("Tags");
+
+let productsJSON = [];
+let originalProducts = [];
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const productList = document.getElementById("productList");
+  const sidebar = document.querySelector(".cart-items");
+  const cartBadge = document.querySelector(".cart-badge");
+  const navTotal = document.getElementById("nav-total");
+  const button1 = document.querySelector(".button1");
+  const button2 = document.querySelector(".button2");
+  const button3 = document.querySelector(".button3");
+
+  // FETCH 
+  fetch("product.json")
+    .then(res => {
+      if (!res.ok) throw new Error("JSON not loaded");
+      return res.json();
+    })
+    .then(data => {
+      productsJSON = data; 
+      originalProducts = [...data];
+      renderProducts(productsJSON);
+      updateSidebar();
+    })
+    .catch(err => console.error(err));
+
+  // PRODUCTS
+  function renderProducts(list) {
+    productList.innerHTML = '';
+    list.forEach(p => {
+         
+       if (selectedCategory && p.category !== selectedCategory) return;
+    if (selectedTag && (!p.tag || !p.tag.includes(selectedTag))) return;
+    
+      const li = document.createElement('li');
+      li.className = "product-item mb-3";
+      li.dataset.category = p.category;
+      li.innerHTML = `
+        <div class="card product-card border-0">
+          <div class="position-relative img-box">
+            <img src="${p.img}" alt="${p.title}" class="product-click">
+            ${p.discount ? `<span class="badge position-absolute top-0 start-0 m-3 rounded-pill bg-white text-dark">-${p.discount}%</span>` : ''}
+            <div class="position-absolute cart-icons d-flex flex-column top-0 end-0 mt-3 me-2">
+              <div class="icon-circle d-flex justify-content-center align-items-center">
+                <i class="bi bi-basket3-fill icon add-to-cart-icon"></i>
+              </div>
+              <div class="icon-circle d-flex justify-content-center align-items-center mt-2">
+                <i class="bi bi-eye-fill icon" data-bs-toggle="modal" data-bs-target="#imageModal"></i>
+              </div>
+            </div>
+          </div>
+          <div class="card-body text-start">
+            <small class="text-muted">${p.category}</small>
+            <a href="#" class="product-title d-block mt-2">${p.title}</a>
+            <div class="fw-semibold">
+              ${p.oldPrice ? `<span class="text-muted text-decoration-line-through">&#x20B9;${p.oldPrice}.00</span>` : ''}
+              <span>&#x20B9;${p.price}.00</span>
+            </div>
+            <p class="product-desc">${p.desc}</p>
+          </div>
+        </div>
+      `;
+      productList.appendChild(li);
+
+      li.querySelector('.product-click').addEventListener('click', () => {
+        localStorage.setItem('selectedProduct', JSON.stringify(p));
+        window.location.href = 'h1.html';
+      });
+
+      li.querySelector('.bi-eye-fill').addEventListener('click', () => {
+        showPreview(p);
+      });
+
+      li.querySelector('.add-to-cart-icon').addEventListener('click', () => {
+        addToCart(p);
+      });
+   
+    });
+  }
+
+  renderProducts(productsJSON); 
+
+  // GRID / LIST TOGGLE 
+  document.getElementById('gridView').addEventListener('click', () => {
+    productList.classList.add('grid-view');
+    productList.classList.remove('list-view');
+    gridView.classList.add('active');
+  listView.classList.remove('active');
+
+  });
+  document.getElementById('listView').addEventListener('click', () => {
+    productList.classList.add('list-view');
+    productList.classList.remove('grid-view');
+    listView.classList.add('active');
+    gridView.classList.remove('active');
+  });
+
+  // CATEGORY FILTER
+  document.querySelectorAll('.Categories').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const selected = link.dataset.category;
+      const filtered = productsJSON.filter(p => p.category === selected);
+      renderProducts(filtered);
+    });
+  });
+
+
+  // CART
+  function addToCart(p){
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existing = cart.find(i => i.title === p.title);
+    if(existing) existing.qty++;
+    else cart.push({title: p.title, price: p.price, img: p.img, qty:1});
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateSidebar();
+  }
+
+  function updateSidebar(){
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    sidebar.innerHTML = '';
+
+    cart.forEach((item,index)=>{
+      const div = document.createElement("div");
+      div.className = "d-flex align-items-center mb-3 cart-item";
+      div.innerHTML = `
+        <img src="${item.img}" width="50" class="me-2">
+        <div class="flex-grow-1">
+          <h6 class="mb-0">${item.title}</h6>
+          <button class="btn btn-sm btn-outline-secondary minus-sidebar rounded-0">−</button>
+          <span class="pb-1 px-2 cart-qty">${item.qty}</span>
+          <button class="btn btn-sm btn-outline-secondary plus-sidebar rounded-0">+</button>
+        </div>
+        <div class="d-flex flex-column align-items-center ms-2">
+          <i class="bi bi-x-lg remove-item" style="cursor:pointer;"></i>
+          <span class="cart-price">₹${item.price*item.qty}.00</span>
+        </div>
+      `;
+      sidebar.appendChild(div);
+
+      div.querySelector(".plus-sidebar").onclick = ()=>{ item.qty++; localStorage.setItem("cart",JSON.stringify(cart)); updateSidebar(); };
+      div.querySelector(".minus-sidebar").onclick = ()=>{ if(item.qty>1){ item.qty--; localStorage.setItem("cart",JSON.stringify(cart)); updateSidebar(); } };
+      div.querySelector(".remove-item").onclick = ()=>{ cart.splice(index,1); localStorage.setItem("cart",JSON.stringify(cart)); updateSidebar(); };
+    });
+
+
+    // const totalQty = cart.reduce((a,b)=>a+b.qty,0);
+    const totalPrice = cart.reduce((a,b)=>a+b.price*b.qty,0);
+    cartBadge.textContent = cart.length;
+    
+    navTotal.textContent = totalPrice.toFixed(2);
+    document.getElementById("sidebar-total").textContent =
+  totalPrice.toFixed(2);
+
+    if(cart.length === 0){
+      button1.style.display = "inline-block";
+      button2.style.display = "none";
+      button3.style.display = "none";
+    } else {
+      button1.style.display = "none";
+      button2.style.display = "inline-block";
+      button3.style.display = "inline-block";
+    }
+  }
+
+  updateSidebar(); 
+
+  function showPreview(p) {
+    const modal = document.getElementById("imageModal");
+    modal.innerHTML = `
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row align-items-start mb-3">
+            <div class="col-12 col-md-7 col-lg-6">
+              <div class="img-box1 position-relative">
+                <img src="${p.img}" class="img-fluid img" alt="${p.title}">
+                ${p.discount ? `<span class="badge position-absolute top-0 start-0 m-3 rounded-pill bg-white text-dark">-${p.discount}%</span>` : ""}
+              </div>
+            </div>
+            <div class="col-12 col-md-5 col-lg-6">
+              <small class="text-muted1">${p.category}</small>
+              <h4 class="product-title mt-2">${p.title}</h4>
+              <div class="fw-semibold mb-3">
+                ${p.oldPrice ? `<span class="text-muted2 text-decoration-line-through fs-5">₹${p.oldPrice}.00</span>` : ""}
+                <span class="fs-4"> ₹${p.price}.00</span>
+                <span class="text-muted2"> + Free Shipping</span>
+              </div>
+              <p class="product-desc">${p.desc}</p>
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="input-group" style="width:140px; min-width:110px;">
+                  <button class="btn btn-outline-secondary minus rounded-0">−</button>
+                  <input type="number" class="form-control text-center qty" value="1" min="1">
+                  <button class="btn btn-outline-secondary plus rounded-0">+</button>
+                </div>
+                <button class="btn btn-success add-to-cart px-lg-5 rounded-pill">Add to cart</button>
+              </div>
+              <hr>
+              <div class="category mt-2 d-flex flex-row gap-2">
+                <div class="product">Category: 
+                  <a href="#" class="modal-category text-decoration-none" data-category="${p.category}">${p.category}</a>
+                </div>
+                <div class="tags">Tags: 
+              ${p.tag?.map(tag => `<a href="#" class="modal-tag  text-decoration-none" data-tag="${tag}">${tag}</a>`).join(", ") || "None"}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+    </div>`;
+
+    const bsModal = new bootstrap.Modal(modal);
+    bsModal.show();
+
+    const qtyInput = modal.querySelector(".qty");
+    const minusBtn = modal.querySelector(".minus");
+    const plusBtn = modal.querySelector(".plus");
+    const addBtn = modal.querySelector(".add-to-cart");
+
+    minusBtn.onclick = () => {
+       if(qtyInput.value>1) qtyInput.value--; 
+      };
+    plusBtn.onclick = () => qtyInput.value++;
+    addBtn.onclick = () => {
+      const qty = parseInt(qtyInput.value);
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(i => i.title===p.title);
+      if(existing) existing.qty += qty;
+      else cart.push({title:p.title, price:p.price, img:p.img, qty});
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateSidebar();
+      bsModal.hide();
+    };
+  }
+
+  // new div 
+ const modalEl = document.getElementById("imageModal");
+
+ modalEl.addEventListener('hidden.bs.modal', () => {
+  const backdrop = document.querySelector('.modal-backdrop');
+    if(backdrop) backdrop.remove();
+  document.body.classList.remove('modal-open');
+  document.body.style.removeProperty('overflow');
+  document.body.style.removeProperty('padding-right');
+ });
+
+// Dropdown concept
+const sortItems = document.querySelectorAll(".dropdown-item");
+
+sortItems.forEach(item => {
+  item.addEventListener("click", function (e) {
+    e.preventDefault();
+    const text = this.innerText.trim();
+
+    let sortedProducts = [];
+
+    if (
+      text === "Default Sorting" ||
+      text === "Sort by popularity" ||
+      text === "Sort by rating" ||
+      text === "Sort by latest"
+    ) {
+      sortedProducts = [...originalProducts];
+    } 
+    else if (text === "Price: low to high") {
+      sortedProducts = [...productsJSON].sort((a, b) => a.price - b.price);
+    } 
+    else if (text === "Price: high to low") {
+      sortedProducts = [...productsJSON].sort((a, b) => b.price - a.price);
+    }
+renderProducts(sortedProducts);
+  });
+});
+document.addEventListener("click", function (e) {
+
+  // CATEGORY CLICK (MODAL)
+  if (e.target.classList.contains("modal-category")) {
+    e.preventDefault();
+    const cat = e.target.dataset.category;
+
+    const filtered = productsJSON.filter(p => p.category === cat);
+    renderProducts(filtered);
+
+    bootstrap.Modal.getInstance(
+      document.getElementById("imageModal")
+    ).hide();
+  }
+
+  // TAG CLICK (MODAL)
+  if (e.target.classList.contains("modal-tag")) {
+    e.preventDefault();
+    const tag = e.target.dataset.tag;
+
+    const filtered = productsJSON.filter(
+      p => p.tag && p.tag.includes(tag)
+    );
+
+    renderProducts(filtered);
+
+    bootstrap.Modal.getInstance(
+      document.getElementById("imageModal")
+    ).hide();
+  }
+});
+
+});
+</script>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

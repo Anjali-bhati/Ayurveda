@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Page</title>
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="checkout.css">
+<link rel="icon" type="image/png" href="image/favicon_io/favicon-16x16.png">
+</head>
+
+<body>
+
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
+<div class="container-fluid">
+  <a class="navbar-brand mx-auto" href="#">
+    <img id="logo-nav" src="image/logo.png" class="img-fluid" alt="logo">
+  </a>
+</div>
+</nav>
+</header>
+<main>
+<section>
+  <div class="s1 container-fluid">
+    <div class="row justify-content-center">
+      <div class="s1box col-11 col-lg-10">
+        <div class="row mx-lg-3">
+          <form id="checkoutForm" class="col-12 col-lg-6 needs-validation" novalidate>
+            <div id="product-container" class="d-flex flex-row justify-content-between">
+            <h3 class="h3">Customer information</h3>
+                <div class="account mt-4">Already have an account? <a class="log-in" href="#">Log in</a>
+                </div>
+              </div>
+             <div class="form-floating">
+              <input type="text" id="email" class="form-control py-3 my-4" placeholder="Username or Email Address*" required>
+                <label>Username or Email Address*</label>
+                <div class="invalid-feedback">Please enter a valid email (example@gmail.com)</div>
+             </div>
+              <h3 class="h3">Billing details</h3>
+              <div class="row g-3 mt-3 mb-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="First name*" required>
+                    <label>First name*</label>
+              </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="Last name*" required>
+                    <label>Last name*</label>
+                 </div>
+                </div>
+              </div>
+
+              <div class="form-floating my-3">
+                <input type="text" class="form-control" placeholder="Company name">
+                <label>Company name (optional)</label>
+              </div>
+
+              <div class="form-floating mt-3">
+                <select class="form-select" required>
+                  <option>India</option>
+                  <option>USA</option> 
+                  <option>UK</option> 
+                  <option>China</option> '
+                  <option>America</option> 
+                  <option>Antarctica</option> 
+                  <option>Australia</option> 
+                  <option>Bangladesh</option> 
+                  <option>Canada</option>
+                </select>
+                <label>Country</label>
+              </div>
+
+              <div class="row g-3 mt-3 mb-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="Street address*" required>
+                    <label>Street address*</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="Apartment, suite, etc.">
+                    <label>Apartment (optional)</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="City" required>
+                    <label>Town / City</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-floating">
+                  <select class="form-select" required>
+                    <option selected>Madhya Pradesh</option> 
+                    <option>Rajasthan</option> 
+                    <option>Manipur</option> 
+                    <option>Maharashtra</option> 
+                    <option>Lakshadweep</option> 
+                    <option>Punjab</option> 
+                    <option>Odisha</option> 
+                    <option>Uttar Pradesh</option> 
+                    <option>Uttarakhand</option> 
+                  </select>
+                    <label>State</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="PIN Code" required>
+                    <label>PIN Code*</label>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="form-floating my-3">
+                <input type="tel" class="form-control" placeholder="Phone*" required>
+                <label>Phone*</label>
+              </div>
+              <textarea class="form-control my-3" placeholder="Notes about your order"></textarea>
+              <div class="my-4">
+                <a href="#" class="text-decoration-none link">Have a coupon?</a>
+              </div>
+
+              <h3 class="h3d fs-4">Payment</h3>
+              <div class="border rounded">
+                 <div class="p-3 border-bottom">
+                     <label class="d-flex align-items-center gap-2">
+                       <input type="radio" name="payment" id="cod" checked>Cash on delivery
+                     </label>
+                 </div>
+                   <div id="codBox" class="p-3" style="background:#f6f3ea;">
+                     Pay with cash upon delivery.
+                   </div>
+              <div class="p-3 border-top">
+                     <label class="d-flex align-items-center gap-2">
+                       <input type="radio" name="payment" id="paypal">PayPal
+                     </label>
+                   </div>
+                   <div id="paypalBox" class="p-3" style="background:#f6f3ea; display:none;">
+                     Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.
+                   </div>
+                   </div>
+              <button id="placeOrderBtn" type="submit" class="button3 btn btn-success mt-3 py-2 rounded-pill">
+              <i class="bi bi-lock-fill"></i> Place Order ₹0.00</button>
+            </form>
+
+
+          <div class="col-12 col-lg-6 right">
+            <div class="position-sticky top-0 mx-lg-5">
+              <h3 class="mb-4 mt-3 h3d">Your order</h3>
+              <div>
+                <table class="table border rounded">
+                  <thead>
+                    <tr>
+                      <th style="color: rgb(91, 90, 90); font-weight: 500;" class="ps-5">Product</th>
+                      <th style="color: rgb(91, 90, 90); font-weight: 500;" class="ps-5">Subtotal</th>
+                    </tr>
+                  </thead>
+                  <tbody id="cart-body">
+                    
+                  </tbody>
+                <tfoot>
+                  <tr>
+                    <th style="color: rgb(91, 90, 90); font-weight: 500;" class="ps-4">Subtotal</th>
+                    <td class="text-end py-3" id="order-subtotal">₹0</td>
+                  </tr>
+                  <tr>
+                    <th style="color: rgb(91, 90, 90); font-weight: 500;" class="ps-4">Shipping</th>
+                    <td class="text-end py-3">Flat rate: ₹8</td>
+                  </tr>
+                  <tr>
+                    <th style="color: rgb(91, 90, 90); font-weight: 500;" class="ps-4">Total</th>
+                    <td class="text-end py-5 fw-bold " style="color:rgb(91, 90, 90);" id="order-total">₹0.00</td>
+                  </tr>
+                </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="text-white">
+<div class="container d-flex flex-column text-center" style="min-height: 35vh;">
+  <div class="d-flex justify-content-center align-items-center flex-grow-1 gap-3">
+    <a href="#" class="bg-white p-2" style="color: #6AB04C;"><i class="bi bi-facebook"></i></a>
+    <a href="#" class="bg-white p-2" style="color: #6AB04C;"><i class="bi bi-twitter"></i></a>
+    <a href="#" class="bg-white p-2" style="color: #6AB04C;"><i class="bi bi-instagram"></i></a>
+    <a href="#" class="bg-white p-2" style="color: #6AB04C;"><i class="bi bi-youtube"></i></a>
+  </div>
+  <p class="pb-5 mb-0">Copyright © 2025 Ayurveda | Powered by Ayurveda</p>
+</div>
+</footer>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+
+const orderBody = document.getElementById("cart-body");
+const subEl = document.getElementById("order-subtotal");
+const totalEl = document.getElementById("order-total");
+const button = document.getElementById("button3");
+
+function loadOrder() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  orderBody.innerHTML = "";
+
+  let subtotal = 0;
+
+  cart.forEach(item => {
+    let itemTotal = item.price * item.qty;
+    subtotal += itemTotal;
+
+    orderBody.innerHTML += `
+      <tr>
+        <td>
+          <img src="${item.img}" width="50" class="me-1 my-3 rounded">
+          ${item.title} × ${item.qty}
+        </td>
+        <td class="text-end">₹${itemTotal.toFixed(2)}</td>
+      </tr>
+    `;
+  });
+  const placeOrderBtn = document.getElementById("placeOrderBtn");
+
+placeOrderBtn.innerHTML =
+  `<i class="bi bi-lock-fill"></i> Place Order ₹${(subtotal + 8).toFixed(2)}`;
+
+  subEl.innerText = "₹" + subtotal.toFixed(2);
+  totalEl.innerText = "₹" + (subtotal + 8).toFixed(2);
+}
+
+loadOrder();
+
+const checkoutForm = document.getElementById("checkoutForm");
+
+checkoutForm.addEventListener("submit", function (e) {
+  if (!checkoutForm.checkValidity()) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  checkoutForm.classList.add("was-validated");
+});
+const cod = document.getElementById("cod");
+const paypal = document.getElementById("paypal");
+const codBox = document.getElementById("codBox");
+const paypalBox = document.getElementById("paypalBox");
+
+function togglePayment() {
+  if (cod.checked) {
+    codBox.style.display = "block";
+    paypalBox.style.display = "none";
+  } else {
+    codBox.style.display = "none";
+    paypalBox.style.display = "block";
+  }
+}
+
+cod.addEventListener("change", togglePayment);
+paypal.addEventListener("change", togglePayment);
+
+togglePayment();
+
+
+// email 
+const emailInput = document.getElementById("email");
+
+emailInput.addEventListener("input", function () {
+  const emailPattern =
+     /^[a-zA-Z0-9._%+-]+@(gmail|yahoo|outlook)\.com$/;
+
+  if (!emailPattern.test(emailInput.value)) {
+    emailInput.setCustomValidity("Invalid");
+  } else {
+    emailInput.setCustomValidity("");
+  }
+});
+
+</script>
+
+
+</body>
+</html>
