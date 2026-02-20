@@ -251,6 +251,9 @@ footer{
 
 /* ===== MOBILE (320px) ===== */
 @media(max-width: 480px){
+  #imgh1{
+    font-size: 30px !important;
+  }
   .img-wrap2{
     height: auto; /* Let image height adjust automatically */
     padding: 40rem 0;
